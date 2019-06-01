@@ -1,0 +1,29 @@
+.bigBox{
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.date{
+
+  color: green;
+  display: inline;
+
+}
+
+.sender{
+
+  margin: 5px;
+  color:red;
+}
+
+.subject{
+
+  margin: 5px;
+  color:purple;
+}
+.body{
+	display: inline-block;
+	margin: 5px;
+	color:black;
+}

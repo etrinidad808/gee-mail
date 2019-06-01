@@ -5,14 +5,60 @@
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to </html>your browser
+
+count.innerHTML = "There are " + geemails.length + " messages in the mailbox!";
+
+function myFunction() {
+  setInterval(function(){ 
+    (getNewMessage); },
+     3000);
+}
+for(var i = 0; i<geemails.length; i++){  
+  var wrapper = document.createElement('div');
+  wrapper.className = 'bigBox';
+  list.appendChild(wrapper)
+ 
+  var mailBox = document.createElement('div');
+  mailBox.className = 'date';
+  mailBox.innerHTML = "Date:  " + geemails[i].date;
+  mailBox.addEventListener('click', showMessage)
+  wrapper.appendChild(mailBox);
+  
+  var senderBox = document.createElement('p');
+  senderBox.className = 'sender';
+  senderBox.innerHTML = "Sender Name:  " +geemails[i].sender;
+  mailBox.appendChild(senderBox);
+  
+  var subjectBox = document.createElement('p');
+  subjectBox.className = 'subject';
+  subjectBox.innerHTML = "Subject:  " +geemails[i].subject;
+  mailBox.appendChild(subjectBox);
+
+    var bodyBox = document.createElement('p');
+  bodyBox.className = 'body';
+  bodyBox.innerHTML = "Message Body:  " + "<br><br>" +geemails[i].body;
+  mailBox.appendChild(bodyBox);
+}
+
+function showMessage(){
+  var showMail = this.querySelector('.date');
+  if(showMail.style.display === 'block'){
+    showMail.style.display = 'none'
+  }else{
+    showMail.style.display = 'block'
+  }
+}
+    };
+
     </script>
 	</head>
-	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+		<body>
+  <h1>Eugene's Coding Challenge</h1>
+  <button onclick="myFunction()">Get New Message</button>
+  <div id="list">
+  </div>
+  
+  <p id="count">inbox</p>
 	</body>
 </html>

@@ -11,7 +11,7 @@
 
 }
 .hideBody{
-
+color:red;
 display: none;
 }
 
@@ -30,5 +30,5 @@ display: none;
 .bodyMessage{
 	display: inline-block;
 	margin: 5px;
-	color:pink;
+	color:black;
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<script src="js/mail-generator.js"></script>
@@ -9,24 +10,20 @@
 
 count.innerHTML = "There are " + geemails.length + " messages in the mailbox!";
 
-function myFunction() {
-  setInterval(function(){ 
-    (getNewMessage); },
-     3000);
-}
+
 for(var i = 0; i<geemails.length; i++){  
   var wrapper = document.createElement('div');
   wrapper.className = 'bigBox';
   list.appendChild(wrapper)
  
   var mailBox = document.createElement('div');
-  mailBox.className = 'date';
+  mailBox.className = 'mailbox';
   mailBox.innerHTML = "Date:  " + geemails[i].date;
   mailBox.addEventListener('click', showMessage)
   wrapper.appendChild(mailBox);
   
   var senderBox = document.createElement('p');
-  senderBox.className = 'sender';
+  senderBox.className = 'hideBody';
   senderBox.innerHTML = "Sender Name:  " +geemails[i].sender;
   mailBox.appendChild(senderBox);
   
@@ -36,29 +33,31 @@ for(var i = 0; i<geemails.length; i++){
   mailBox.appendChild(subjectBox);
 
     var bodyBox = document.createElement('p');
-  bodyBox.className = 'body';
+  bodyBox.className = 'bodyMessage';
   bodyBox.innerHTML = "Message Body:  " + "<br><br>" +geemails[i].body;
   mailBox.appendChild(bodyBox);
 }
-
-function showMessage(){
-  var showMail = this.querySelector('.date');
+  function showMessage(){
+  var showMail = this.querySelector('.hideBody');
   if(showMail.style.display === 'block'){
     showMail.style.display = 'none'
   }else{
     showMail.style.display = 'block'
-  }
 }
+
+}
+
     };
 
     </script>
 	</head>
-		<body>
+
+	<body>
   <h1>Eugene's Coding Challenge</h1>
-  <button onclick="myFunction()">Get New Message</button>
-  <div id="list">
-  </div>
+  <p id="count"></p>
+  <button onclick="showMessage()">Get New Message</button>
+  <div id="list"></div>
   
-  <p id="count">inbox</p>
+
 	</body>
 </html>

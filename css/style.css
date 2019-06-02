@@ -10,6 +10,11 @@
   display: inline;
 
 }
+.hideBody{
+
+display: none;
+}
+
 
 .sender{
 
@@ -22,8 +27,8 @@
   margin: 5px;
   color:purple;
 }
-.body{
+.bodyMessage{
 	display: inline-block;
 	margin: 5px;
-	color:black;
+	color:pink;
 }

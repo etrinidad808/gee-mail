@@ -14,6 +14,20 @@
 color:red;
 display: none;
 }
+/*
+#list {
+  display: none;
+}
+*/
+ .flip {
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  border: solid 1px #a6d8a8;
+  margin: auto;
+}
 
 
 .sender{

@@ -12,6 +12,8 @@ count.innerHTML = "There are " + geemails.length + " messages in the mailbox!";
 
 
 for(var i = 0; i<geemails.length; i++){  
+
+
   var wrapper = document.createElement('div');
   wrapper.className = 'bigBox';
   list.appendChild(wrapper)
@@ -19,7 +21,7 @@ for(var i = 0; i<geemails.length; i++){
   var mailBox = document.createElement('div');
   mailBox.className = 'date';
   mailBox.innerHTML = "Date:  " + geemails[i].date;
-  mailBox.addEventListener('click', showMessage)
+ mailBox.addEventListener('click', showMessage)
   wrapper.appendChild(mailBox);
   
   var senderBox = document.createElement('p');
@@ -36,7 +38,12 @@ for(var i = 0; i<geemails.length; i++){
   bodyBox.className = 'bodyMessage';
   bodyBox.innerHTML = "Message Body:  " + "<br><br>" +geemails[i].body;
   mailBox.appendChild(bodyBox);
+
+
+
 }
+
+
   function showMessage(){
   var showMail = this.querySelector('.hideBody');
   if(showMail.style.display === 'block'){
@@ -46,17 +53,24 @@ for(var i = 0; i<geemails.length; i++){
 }
 
 }
+};
 
-    };
+//function showMessage() {
+  //document.getElementById("list").style.display = "block";
+//}
+
+   // };
 
     </script>
 	</head>
 
 	<body>
   <h1>Eugene's Coding Challenge</h1>
-  <p id="count"></p>
-  <button onclick="showMessage()">Get New Message</button>
-  <div id="list"></div>
+  <div><p id="count"></p></div>
+  <button class="flip" id="showMyMessage">Get Message</button>
+  <div id="list">
+  	
+  </div>
   
 
 	</body>
